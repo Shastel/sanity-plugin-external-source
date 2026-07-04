@@ -1,0 +1,97 @@
+{
+  "name": "sanity-plugin-external-source",
+  "version": "1.0.0",
+  "description": "Generic visual picker for external data in Sanity Studio: connect any API through a small adapter interface and let editors browse, filter, and select items in a native-feeling dialog",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "external-data",
+    "picker",
+    "integration",
+    "dam",
+    "pim"
+  ],
+  "homepage": "https://github.com/Shastel/sanity-plugin-external-source#readme",
+  "bugs": {
+    "url": "https://github.com/Shastel/sanity-plugin-external-source/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shastel/sanity-plugin-external-source.git"
+  },
+  "license": "MIT",
+  "author": "Max Shastsel <max@shas.tel>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      },
+      "./package.json": "./package.json"
+    }
+  },
+  "scripts": {
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --check --clean",
+    "dev": "cd dev && sanity dev",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "watch": "pkg-utils watch --strict"
+  },
+  "dependencies": {
+    "@sanity/icons": "^3.7.0",
+    "@sanity/ui": "^3.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/pkg-utils": "^10.9.0",
+    "@sanity/plugin-kit": "^6.0.3",
+    "@types/react": "^19.1.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-react-hooks": "^6.0.0",
+    "prettier": "^3.4.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-is": "^19.0.0",
+    "sanity": "^6.3.0",
+    "styled-components": "^6.1.15",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.2.7"
+  },
+  "peerDependencies": {
+    "react": "^18.3 || ^19",
+    "react-dom": "^18.3 || ^19",
+    "sanity": "^3.78.0 || ^4.0.0 || ^5.0.0 || ^6.0.0",
+    "styled-components": "^6.1"
+  },
+  "engines": {
+    "node": ">=20.19 <22 || >=22.12"
+  },
+  "browserslist": "extends @sanity/browserslist-config",
+  "sanityPlugin": {
+    "verifyPackage": {
+      "eslintImports": false
+    }
+  }
+}
