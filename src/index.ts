@@ -13,11 +13,12 @@ import type {ExternalSourceConfig} from './types'
  *
  * export default defineConfig({
  *   // ...
- *   plugins: [externalSource({adapters: [myAdapter]})],
+ *   plugins: [externalSource()],
  * })
  * ```
  *
- * Then use the type in your schema: `defineField({name: 'product', type: 'external.item'})`.
+ * Then use the type in your schema, with adapters configured per field:
+ * `defineField({name: 'product', type: 'external.item', options: {adapters: [myAdapter]}})`.
  */
 export const externalSource = definePlugin<ExternalSourceConfig | void>(rawConfig => {
   const config: ExternalSourceConfig = rawConfig ?? {}

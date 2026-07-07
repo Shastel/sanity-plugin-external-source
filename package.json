@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-external-source",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generic visual picker for external data in Sanity Studio: connect any API through a small adapter interface and let editors browse, filter, and select items in a native-feeling dialog",
   "keywords": [
     "sanity",

@@ -298,7 +298,7 @@ The keys you return replace the default item-derived fields. If you add fields t
 Combine with `storePayload: false` (plugin-level) to skip the JSON `payload` string entirely:
 
 ```ts
-externalSource({adapters: [/* … */], storePayload: false})
+externalSource({storePayload: false})
 ```
 
 ## Custom tiles and previews

@@ -167,8 +167,8 @@ export interface ExternalItemFieldOptions {
 }
 
 /**
- * Connects one external API to the picker. Register adapters via the
- * plugin config: `externalSource({adapters: [...]})`.
+ * Connects one external API to the picker. Register adapters per field via
+ * `options: {adapters: [...]}` — see {@link ExternalItemFieldOptions.adapters}.
  */
 export interface ExternalSourceAdapter<TItem extends ExternalItem = ExternalItem> {
   /** Machine name, stored in the document as `source`. Must be unique across adapters. */
