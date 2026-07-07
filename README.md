@@ -1,6 +1,6 @@
 # sanity-plugin-external-source
 
-A generic, Bynder-style picker for **any external API** in Sanity Studio.
+A generic visual picker for **any external API** in Sanity Studio.
 
 Give editors a native-feeling dialog with preview tiles, search, filters and pagination for data that lives outside Sanity — a PIM, a DAM, an internal REST service, a public API. You write a small **adapter** (one `fetch` function); the plugin does the rest.
 
